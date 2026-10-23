@@ -1,3 +1,23 @@
-# pixi environments
-.pixi/*
-!.pixi/config.toml
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+
+# Environments
+.env
+.venv/
+.pixi/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (store externally)
+data/
+*.csv
+*.parquet
+*.h5
+
+# OS files
+.DS_Store
+Thumbs.db
