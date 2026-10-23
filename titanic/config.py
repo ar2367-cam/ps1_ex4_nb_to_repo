@@ -2,8 +2,9 @@ from pathlib import Path
 
 # Paths (anchored to the repository root, so they work from any working directory)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-TRAIN_PATH = PROJECT_ROOT / "train.csv"
-TEST_PATH = PROJECT_ROOT / "test.csv"
+DATA_DIR = PROJECT_ROOT / "data"
+TRAIN_PATH = DATA_DIR / "train.csv"
+TEST_PATH = DATA_DIR / "test.csv"
 
 # Plotting
 COLOR_LIST = ["#A5D7E8", "#576CBC", "#19376D", "#0b2447"]

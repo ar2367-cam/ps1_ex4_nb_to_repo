@@ -12,12 +12,6 @@ __pycache__/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data (store externally)
-data/
-*.csv
-*.parquet
-*.h5
-
 # OS files
 .DS_Store
 Thumbs.db
