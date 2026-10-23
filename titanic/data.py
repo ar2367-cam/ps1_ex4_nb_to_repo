@@ -10,7 +10,7 @@ def load_data():
 
 def combine_train_test(train_df, test_df):
     """Stack train and test into one dataframe with a "set" column ("train"/"test")."""
-    all_df = pd.concat([train_df, test_df], axis=0)
+    all_df = pd.concat([train_df, test_df], axis=0, ignore_index=True)
     all_df["set"] = "train"
     all_df.loc[all_df["Survived"].isna(), "set"] = "test"
     return all_df
