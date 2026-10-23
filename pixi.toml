@@ -14,3 +14,6 @@ scikit-learn = ">=1.9.1,<2"
 matplotlib = ">=3.11.2,<4"
 seaborn = ">=0.13.2,<0.14"
 ipykernel = ">=7.4.0,<8"
+
+[pypi-dependencies]
+titanic = { path = ".", editable = true }
