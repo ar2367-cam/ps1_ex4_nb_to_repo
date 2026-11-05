@@ -1,7 +1,9 @@
+from contextlib import contextmanager
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from titanic.config import COLOR_LIST
+from titanic.config import COLOR_LIST, FIGURES_DIR
 
 
 def _colours(df, hue):
@@ -26,3 +28,20 @@ def plot_distribution(df, column, hue=None):
     sns.histplot(data=df, x=column, ax=ax, **_colours(df, hue))
     ax.set_title(f"Distribution of {column}")
     plt.show()
+
+
+@contextmanager
+def save_figure(filename):
+    """Save the figure drawn inside the with-block to figures/<filename>, just before it is shown."""
+    original_show = plt.show
+
+    def show_and_save(*args, **kwargs):
+        FIGURES_DIR.mkdir(exist_ok=True)
+        plt.gcf().savefig(FIGURES_DIR / filename, dpi=150, bbox_inches="tight")
+        original_show(*args, **kwargs)
+
+    plt.show = show_and_save
+    try:
+        yield
+    finally:
+        plt.show = original_show

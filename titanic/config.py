@@ -5,6 +5,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 TRAIN_PATH = DATA_DIR / "train.csv"
 TEST_PATH = DATA_DIR / "test.csv"
+FIGURES_DIR = PROJECT_ROOT / "figures"
 
 # Plotting
 COLOR_LIST = ["#A5D7E8", "#576CBC", "#19376D", "#0b2447"]
